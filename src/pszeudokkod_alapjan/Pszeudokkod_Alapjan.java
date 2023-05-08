@@ -5,7 +5,7 @@ import java.util.Random;
 public class Pszeudokkod_Alapjan {
 
     public static void main(String[] args) {        
-        int[] lista = tomb(15);
+        int[] lista = tomb(0);
         kiir(lista);
         int[] rendezett = buborekRendezes(lista);
         
@@ -17,7 +17,7 @@ public class Pszeudokkod_Alapjan {
 
     private static int[] buborekRendezes(int[] lista) {
         int temptation = 0;
-        
+        assert lista !=null: " A bemeneti tömb nem lehet nulla";
         for (int i = lista.length; i >= 1; i--) {
             for (int j = 0; j < i - 1; j++) {
                 if (lista[j] > lista[j + 1]) {
@@ -32,6 +32,7 @@ public class Pszeudokkod_Alapjan {
     }
 
     private static int[] tomb(int db) {
+        assert db <= 0 : "Nem lehet negativ vagy nulla";
         int[] tomb = new int[db];
         Random rnd = new Random();
 
